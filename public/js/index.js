@@ -1,5 +1,7 @@
-const rootEl = document.getElementById('#root');
+const characterEl = document.getElementById('#character-submit');
+const listEl = document.getElementById('#list-submit');
 
+//
 const getData = () => {
     fetch('/api', {
         method: 'GET'
@@ -10,7 +12,8 @@ const getData = () => {
 
 getData();
 
+//
 function submitForm() {
-    let form = document.getElementById("form-submit");
+    let form = document.getElementById("list-submit");
     form.submit();
 }

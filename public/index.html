@@ -11,11 +11,13 @@
 <body>
     <!-- Heading section -->
     <section>
-        <h1 class='flex justify-center font-medium leading-tight text-5xl mt-0 mb-2 text-blue-800'>Your Weekly Reset
-        </h1>
+        <a class='flex justify-center mt-0 mb-2' href="https://fontmeme.com/glow-effect/"><img
+                src="https://fontmeme.com/permalink/220227/5b20cd6377a6a621a51a07c8cfb4fc52.png" alt="glow-effect"
+                border="0"></a>
+        <!-- <h1 class='flex justify-center font-medium leading-tight text-5xl mt-0 mb-2 text-blue-800'>Your Weekly Reset
+        </h1> -->
         <p class="flex justify-center font-medium leading-tight text-gray-400">Easily keep track of your weekly and
-            daily
-            quests here!</p>
+            daily activities in patch 9.2 right here!</p>
     </section>
     <!-- Container holding the character form -->
     <div class="flex items-center justify-center mt-10">
@@ -43,7 +45,7 @@
             <div class="flex justify-center">
                 <button
                     class="mt-2 px-5 py-3 rounded-lg shadow-lg bg-blue-400 text-white tracking-wider font-semibold btn btn-primary"
-                    type="submit" id="characterInfo">Start Tracking</button>
+                    type="submit" id="character-submit">Start Tracking</button>
             </div>
         </form>
     </div>
@@ -52,6 +54,7 @@
         <div class="flex flex-col w-1/2 border border-gray-400 shadow-lg overflow-hidden m-auto pb-4">
             <div class="justify-around flex flex-row items-baseline">
             </div>
+            <!-- Checklist 1 -->
             <label class="custom-label flex mt-2 ml-3">
                 <div class="bg-white shadow w-6 h-6 p-1 flex justify-center items-center mr-2">
                     <input type="checkbox" class="hidden">
@@ -67,7 +70,7 @@
                 </div>
                 <input type="text" size='40' placeholder="Weekly Campaign Quest">
             </label>
-
+            <!-- Checklist 2 -->
             <label class="custom-label flex mt-2 ml-3">
                 <div class="bg-white shadow w-6 h-6 p-1 flex justify-center items-center mr-2">
                     <input type="checkbox" class="hidden">
@@ -83,7 +86,7 @@
                 </div>
                 <input type="text" size='40' placeholder="Daily Quests in Zereth Mortis">
             </label>
-
+            <!-- Checklist 3 -->
             <label class="custom-label flex mt-2 ml-3">
                 <div class="bg-white shadow w-6 h-6 p-1 flex justify-center items-center mr-2">
                     <input type="checkbox" class="hidden">
@@ -97,9 +100,9 @@
                         </g>
                     </svg>
                 </div>
-                <input type="text" size='40' placeholder="Weekly Quest in Zereth Mortis">
+                <input type="text" size='40' placeholder="Enlightened Reputation Quest in Zereth Mortis">
             </label>
-
+            <!-- Checklist 4 -->
             <label class="custom-label flex mt-2 ml-3">
                 <div class="bg-white shadow w-6 h-6 p-1 flex justify-center items-center mr-2">
                     <input type="checkbox" class="hidden">
@@ -115,7 +118,7 @@
                 </div>
                 <input type="text" size='40' placeholder="Restocked Consumables for Raid">
             </label>
-
+            <!-- Checklist 5 -->
             <label class="custom-label flex mt-2 ml-3">
                 <div class="bg-white shadow w-6 h-6 p-1 flex justify-center items-center mr-2">
                     <input type="checkbox" class="hidden">
@@ -134,7 +137,7 @@
             <div class="flex justify-center">
                 <button
                     class="mt-2 px-5 py-3 rounded-lg shadow-lg bg-blue-400 text-white tracking-wider font-semibold btn btn-primary"
-                    type="submit" id="form-submit">Done for Today</button>
+                    type="submit" id="list-submit">Done for Today</button>
             </div>
         </div>
     </div>
