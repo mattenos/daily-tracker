@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <!-- Heading section -->
     <section>
         <h1 class='flex justify-center font-medium leading-tight text-5xl mt-0 mb-2 text-blue-800'>Your Weekly Reset
         </h1>
@@ -16,22 +17,27 @@
             daily
             quests here!</p>
     </section>
+    <!-- Container holding the character form -->
     <div class="flex items-center justify-center mt-10">
         <form class="bg-white shadow-lg px-6 pt-4 pb-6 mb-2 rounded signupForm">
             <div class="form-group">
-                <label class="text-slate-800 font-bold" for="username-signup">Character Name:</label>
+                <label class="text-slate-800 font-bold" for="characterName">Character Name:</label>
                 <input class="shadow border rounded w-full text-slate-500 leading-tight py-2 form-input" type="text"
                     id="username_signup" />
             </div>
             <div class="form-group">
-                <label class="text-slate-800 font-bold" for="email">Realm:</label>
+                <label class="text-slate-800 font-bold" for="realm">Realm:</label>
                 <input class="shadow border rounded w-full text-slate-500 leading-tight py-2 form-input" type="text"
                     id="email" />
             </div>
             <div class="form-group">
-                <label class="text-slate-800 font-bold" for="password-signup">Region:</label>
+                <label class="text-slate-800 font-bold" for="region">Region:</label>
                 <input class="shadow border rounded w-full text-slate-500 leading-tight py-2 form-input" type="password"
                     id="password_signup" />
+            </div>
+            <div>
+                <label class="text-slate-800 font-bold" for="start">Date:</label>
+                <input class="shadow border rounded w-full text-slate-500 leading-tight py-2 form-input" type="date">
             </div>
             <div class="form-group">
                 <button
@@ -40,12 +46,8 @@
             </div>
         </form>
     </div>
-
-
-    <!-- component -->
-    <!-- Change the size of the container "max-w-full", ideally to w-1/6-->
+    <!-- Container holding the checklist -->
     <div class="container max-w-full ml-8 mt-6 text-base font-sans">
-
         <div class="flex flex-col w-1/2 border border-gray-400 shadow-lg overflow-hidden m-auto pb-4">
             <div class="justify-around flex flex-row items-baseline">
             </div>
@@ -128,9 +130,7 @@
                 </div>
                 <input type="text" size='40' placeholder="Completed M+ Dungeons for Vault Rewards">
             </label>
-
         </div>
-
     </div>
 
 
