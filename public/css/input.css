@@ -2,4 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.custom-label input:checked + svg {
+    display: block !important;
+}
