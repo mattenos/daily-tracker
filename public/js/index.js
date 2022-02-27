@@ -9,3 +9,10 @@ const getData = () => {
 };
 
 getData();
+
+// let character = prompt("Please enter your character name", "Harry Potter");
+
+// if (person != null) {
+//   document.getElementById("demo").innerHTML =
+//   "Hello " + person + "! How are you today?";
+// }
