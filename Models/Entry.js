@@ -4,6 +4,7 @@ const sequelize = require('../config/connection');
 
 class Entry extends Model {}
 
+// Links the Character with the completed activities.
 Entry.init(
 	{
 		id: {

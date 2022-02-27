@@ -1,0 +1,27 @@
+[
+    {
+        "id": 0,
+        "description": "Weekly Campaign Quest",
+        "type": "weekly"
+    },
+    {
+        "id": 1,
+        "description": "World Quests in Zereth Mortis",
+        "type": "daily"
+    },
+    {
+        "id": 2,
+        "description": "Enlightened Reputation Quest in Zereth Mortis",
+        "type": "weekly"
+    },
+    {
+        "id": 3,
+        "description": "Restocked Consumables for Raid",
+        "type": "weekly"
+    },
+    {
+        "id": 4,
+        "description": "Completed M+ Dungeons for Vault Rewards",
+        "type": "weekly"
+    }
+]

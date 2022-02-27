@@ -13,9 +13,12 @@ Activity.init(
 			autoIncrement: true,
 			unique: true
 		},
-		name: {
+		description: {
 			type: DataTypes.STRING,
 		},
+		type: {
+			type: DataTypes.ENUM('daily','weekly','monthly')
+		}
 	},
 	{
 		sequelize,
