@@ -32,7 +32,7 @@ const submitCharacter = () => {
 
             const characterWelcome = document.createElement("h2")
             characterWelcome.classList = "flex items-center justify-center text-green-600 text-2xl font-bold m-4"
-            characterWelcome.innerText = `${capitalizeFirstLetter(activeCharacter.name)} is ready to enter the Zereth Mortis! Happy hunting.`
+            characterWelcome.innerText = `${capitalizeFirstLetter(activeCharacter.name)} is ready to enter the mysterious lands of Zereth Mortis! Happy hunting.`
             entryForm.prepend(characterWelcome);
             // hides character form and then shows entry form.
             characterForm.hidden = true;

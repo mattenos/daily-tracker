@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const Character = require('../Models/Character')
-const sequelize = require('../config/connection');
+const Sequelize = require('../config/connection');
 
 // Home route to localhost:3001
 router.get('/', (req, res) => {
@@ -11,18 +11,17 @@ router.get('/', (req, res) => {
 router.post('/character', async (req, res) => {
     const { name, realm, region } = (req.body)
     try {
-        let characterData = await Character.findOne({
+        // Sequelize documentation
+        let [characterData, isNewCharacter] = await Character.findOrCreate({
             where: {
                 name,
                 realm,
                 region
             },
         })
-        // if the character doesnt exist in the db, create new character
-        if (!characterData) {
-            characterData = await Character.create({ name, realm, region });
-        }
-        console.log(characterData);
+        // if (!characterData) {
+        //     characterData = await Character.create({ name, realm, region });
+        // }
         res.json(characterData)
     }
     catch (err) {
