@@ -475,11 +475,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-2 {
   margin-top: 0.5rem;
 }
-.ml-8 {
-  margin-left: 2rem;
-}
 .mt-6 {
   margin-top: 1.5rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 .ml-3 {
   margin-left: 0.75rem;

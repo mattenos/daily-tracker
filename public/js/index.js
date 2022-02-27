@@ -11,6 +11,6 @@ const getData = () => {
 getData();
 
 function submitForm() {
-    let form = document.getElementById("form__submit");
+    let form = document.getElementById("form-submit");
     form.submit();
 }

@@ -19,35 +19,36 @@
     </section>
     <!-- Container holding the character form -->
     <div class="flex items-center justify-center mt-10">
-        <form class="bg-white shadow-lg px-6 pt-4 pb-6 mb-2 rounded signupForm">
+        <form class="bg-white shadow-lg px-6 pt-4 pb-6 mb-2 rounded characterForm">
             <div class="form-group">
                 <label class="text-slate-800 font-bold" for="characterName">Character Name:</label>
                 <input class="shadow border rounded w-full text-slate-500 leading-tight py-2 form-input" type="text"
-                    id="username_signup" />
+                    id="characterName" />
             </div>
             <div class="form-group">
                 <label class="text-slate-800 font-bold" for="realm">Realm:</label>
                 <input class="shadow border rounded w-full text-slate-500 leading-tight py-2 form-input" type="text"
-                    id="email" />
+                    id="realm" />
             </div>
             <div class="form-group">
                 <label class="text-slate-800 font-bold" for="region">Region:</label>
-                <input class="shadow border rounded w-full text-slate-500 leading-tight py-2 form-input" type="password"
-                    id="password_signup" />
+                <input class="shadow border rounded w-full text-slate-500 leading-tight py-2 form-input" type="text"
+                    id="region" />
             </div>
             <div>
-                <label class="text-slate-800 font-bold" for="start">Date:</label>
-                <input class="shadow border rounded w-full text-slate-500 leading-tight py-2 form-input" type="date">
+                <label class="text-slate-800 font-bold" for="date">Date:</label>
+                <input class="shadow border rounded w-full text-slate-500 leading-tight py-2 form-input" type="date"
+                    id="date">
             </div>
             <div class="flex justify-center">
                 <button
                     class="mt-2 px-5 py-3 rounded-lg shadow-lg bg-blue-400 text-white tracking-wider font-semibold btn btn-primary"
-                    type="submit">Start Tracking</button>
+                    type="submit" id="characterInfo">Start Tracking</button>
             </div>
         </form>
     </div>
     <!-- Container holding the checklist -->
-    <div class="container max-w-full ml-8 mt-6 text-base font-sans">
+    <div class="container max-w-full mt-6 mb-6 text-base font-sans">
         <div class="flex flex-col w-1/2 border border-gray-400 shadow-lg overflow-hidden m-auto pb-4">
             <div class="justify-around flex flex-row items-baseline">
             </div>
@@ -133,7 +134,7 @@
             <div class="flex justify-center">
                 <button
                     class="mt-2 px-5 py-3 rounded-lg shadow-lg bg-blue-400 text-white tracking-wider font-semibold btn btn-primary"
-                    type="submit">Done for Today</button>
+                    type="submit" id="form-submit">Done for Today</button>
             </div>
         </div>
     </div>
