@@ -13,7 +13,7 @@ Character.init(
 			autoIncrement: true,
 			unique: true
 		},
-		characterName: {
+		name: {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},

@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 
-<body>
+<body class="">
     <!-- Heading section -->
     <section>
         <a class='flex justify-center mt-0 mb-2' href="https://fontmeme.com/glow-effect/"><img
@@ -20,37 +20,39 @@
             daily activities in patch 9.2 right here!</p>
     </section>
     <!-- Container holding the character form -->
-    <div class="flex items-center justify-center mt-10">
-        <form class="bg-white shadow-lg px-6 pt-4 pb-6 mb-2 rounded characterForm">
-            <div class="form-group">
-                <label class="text-slate-800 font-bold" for="characterName">Character Name:</label>
-                <input class="shadow border rounded w-full text-slate-500 leading-tight py-2 form-input" type="text"
-                    id="characterName" />
-            </div>
-            <div class="form-group">
-                <label class="text-slate-800 font-bold" for="realm">Realm:</label>
-                <input class="shadow border rounded w-full text-slate-500 leading-tight py-2 form-input" type="text"
-                    id="realm" />
-            </div>
-            <div class="form-group">
-                <label class="text-slate-800 font-bold" for="region">Region:</label>
-                <input class="shadow border rounded w-full text-slate-500 leading-tight py-2 form-input" type="text"
-                    id="region" />
-            </div>
-            <!-- <div>
+    <div id="character-form">
+        <div class="flex items-center justify-center mt-10">
+            <form class="bg-white shadow-lg px-6 pt-4 pb-6 mb-2 rounded characterForm">
+                <div class="form-group">
+                    <label class="text-slate-800 font-bold" for="characterName">Character Name:</label>
+                    <input class="shadow border rounded w-full text-slate-500 leading-tight py-2 form-input" type="text"
+                        id="characterName" />
+                </div>
+                <div class="form-group">
+                    <label class="text-slate-800 font-bold" for="realm">Realm:</label>
+                    <input class="shadow border rounded w-full text-slate-500 leading-tight py-2 form-input" type="text"
+                        id="realm" />
+                </div>
+                <div class="form-group">
+                    <label class="text-slate-800 font-bold" for="region">Region:</label>
+                    <input class="shadow border rounded w-full text-slate-500 leading-tight py-2 form-input" type="text"
+                        id="region" />
+                </div>
+                <!-- <div>
                 <label class="text-slate-800 font-bold" for="date">Date:</label>
                 <input class="shadow border rounded w-full text-slate-500 leading-tight py-2 form-input" type="date"
                     id="date">
             </div> -->
-            <div class="flex justify-center">
-                <button
-                    class="mt-2 px-5 py-3 rounded-lg shadow-lg bg-blue-400 text-white tracking-wider font-semibold btn btn-primary"
-                    type="button" id="character-submit">Start Tracking</button>
-            </div>
-        </form>
+                <div class="flex justify-center">
+                    <button
+                        class="mt-2 px-5 py-3 rounded-lg shadow-lg bg-blue-400 text-white tracking-wider font-semibold btn btn-primary"
+                        type="button" id="character-submit">Start Tracking</button>
+                </div>
+            </form>
+        </div>
     </div>
     <!-- Container holding the checklist -->
-    <div class="container max-w-full mt-6 mb-6 text-base font-sans">
+    <div hidden id="entry-form" class="container max-w-full mt-6 mb-6 text-base font-sans">
         <div class="flex flex-col w-1/2 border border-gray-400 shadow-lg overflow-hidden m-auto pb-4">
             <div class="justify-around flex flex-row items-baseline">
             </div>
