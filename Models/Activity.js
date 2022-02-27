@@ -2,9 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
-class Character extends Model { }
+class Activity extends Model {}
 
-Character.init(
+Activity.init(
 	{
 		id: {
 			type: DataTypes.INTEGER,
@@ -13,17 +13,8 @@ Character.init(
 			autoIncrement: true,
 			unique: true
 		},
-		characterName: {
+		name: {
 			type: DataTypes.STRING,
-			allowNull: false,
-		},
-		realm: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
-		region: {
-			type: DataTypes.STRING,
-			allowNull: false,
 		},
 	},
 	{
@@ -31,8 +22,8 @@ Character.init(
 		timestamps: true,
 		underscored: true,
 		freezeTableName: true,
-		modelName: 'character',
+		modelName: 'activity',
 	}
 );
 
-module.exports = Character;
+module.exports = Activity;
