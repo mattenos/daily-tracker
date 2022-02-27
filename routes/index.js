@@ -11,17 +11,21 @@ router.get('/', (req, res) => {
 router.post('/character', async (req, res) => {
     const { name, realm, region } = (req.body)
     try {
-        // Sequelize documentation
-        let [characterData, isNewCharacter] = await Character.findOrCreate({
+        // Sequelize documentation to use findOrCreate instead of if statement. https://sequelize.org/master/manual/model-querying-finders.html
+        const [characterData, isNewCharacter] = await Character.findOrCreate({
             where: {
                 name,
                 realm,
                 region
             },
         })
+
         // if (!characterData) {
         //     characterData = await Character.create({ name, realm, region });
         // }
+
+        console.log(isNewCharacter);
+        // The unchanged characterData
         res.json(characterData)
     }
     catch (err) {
