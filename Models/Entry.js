@@ -29,7 +29,7 @@ Entry.init(
 		timestamps: true,
 		underscored: true,
 		freezeTableName: true,
-		modelName: 'activity',
+		modelName: 'entry',
 	}
 );
 

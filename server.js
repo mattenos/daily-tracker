@@ -15,8 +15,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', routes);
 
-
-
 sequelize.sync({ force: false }).then(() => {
 	app.listen(PORT, () => {
 		console.log(`Listening at ${PORT}`);

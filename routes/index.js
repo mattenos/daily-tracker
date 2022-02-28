@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const Character = require('../Models/Character')
 const Sequelize = require('../config/connection');
+const activitiesJson = require('../seeds/activities.json');
 
 // Home route to localhost:3001
 router.get('/', (req, res) => {
@@ -11,7 +12,7 @@ router.get('/', (req, res) => {
 router.post('/character', async (req, res) => {
     const { name, realm, region } = (req.body)
     try {
-        // Sequelize documentation to use findOrCreate instead of if statement. https://sequelize.org/master/manual/model-querying-finders.html
+        // Sequelize documentation to use findOrCreate instead of if statement. https://sequelize.org/master/manual/model-querying-finders.html. Allows us to return data as array.
         const [characterData, isNewCharacter] = await Character.findOrCreate({
             where: {
                 name,
@@ -19,19 +20,17 @@ router.post('/character', async (req, res) => {
                 region
             },
         })
-
-        // if (!characterData) {
-        //     characterData = await Character.create({ name, realm, region });
-        // }
-
-        console.log(isNewCharacter);
-        // The unchanged characterData
         res.json(characterData)
     }
     catch (err) {
         res.status(500).json(err);
     }
 });
+
+// Forwarding the activities.json data
+router.get('/activities', (req, res) => {
+res.json(activitiesJson)
+})
 
 
 module.exports = router;
