@@ -1,6 +1,8 @@
 const characterSubmitButton = document.getElementById('character-submit');
 const characterForm = document.getElementById('character-form');
 const entryForm = document.getElementById('entry-form');
+const entrySubmitButton = document.getElementById('entry-submit');
+
 let activeCharacter;
 
 function capitalizeFirstLetter(string) {
@@ -38,7 +40,34 @@ const populateActivities = (activities) => {
     });
 }
 
+// Submitting the completed activities for the day. Querying for the attribute 'data-activity-id' from the above html.
+// backend is looking for keys noted in entry.js model.
+// Then we are posting the character ID and the completed activities when submitted on the front end.
+const submitEntries = () => {
+    const completedActivityIds = [];
+    const entryInputs = Array.from(document.querySelectorAll('[data-activity-id]'));
+    entryInputs.forEach(entryInput => {
+        if (entryInput.checked) {
+            completedActivityIds.push(entryInput.getAttribute("data-activity-id"))
+        }
+    })
+    // console.log(completedActivityIds);
+    // console.log(activeCharacter.id);
+    fetch('/api/entry', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            characterId: activeCharacter.id,
+            completedActivityIds,
+        })
+    })
+        // .then((res) => res.json())
+        // .then((data) => {
 
+        // });
+}
 
 // fetch request that posts the user input into the db
 const submitCharacter = () => {
@@ -73,8 +102,10 @@ const submitCharacter = () => {
         });
 };
 
-// Submits the user input on click of submit button.
+// Submits the character input on click of start-tracking button.
 characterSubmitButton.onclick = submitCharacter;
+// Submits the completed entries on click of done-for-today button.
+entrySubmitButton.onclick = submitEntries;
 
 
 

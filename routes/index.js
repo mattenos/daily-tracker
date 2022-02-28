@@ -27,6 +27,17 @@ router.post('/character', async (req, res) => {
     }
 });
 
+// 
+router.post('/entry', (req, res) => {
+    const characterId = req.body.characterId;
+    const completedActivityIds = req.body.completedActivityIds;
+    console.log(characterId);
+    console.log(completedActivityIds);
+    completedActivityIds.forEach((activityId) => {
+    }) 
+
+})
+
 // Forwarding the activities.json data
 router.get('/activities', (req, res) => {
 res.json(activitiesJson)
