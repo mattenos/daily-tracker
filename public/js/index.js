@@ -48,26 +48,22 @@ const submitEntries = () => {
     const entryInputs = Array.from(document.querySelectorAll('[data-activity-id]'));
     entryInputs.forEach(entryInput => {
         if (entryInput.checked) {
-            completedActivityIds.push(entryInput.getAttribute("data-activity-id"))
+            completedActivityIds.push(
+                {
+                    activityId: entryInput.getAttribute("data-activity-id"),
+                    characterId: activeCharacter.id
+                }
+            )
         }
-    })
-    // console.log(completedActivityIds);
-    // console.log(activeCharacter.id);
+    });
     fetch('/api/entry', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            characterId: activeCharacter.id,
-            completedActivityIds,
-        })
+        body: JSON.stringify(completedActivityIds)
     })
-        // .then((res) => res.json())
-        // .then((data) => {
-
-        // });
-}
+};
 
 // fetch request that posts the user input into the db
 const submitCharacter = () => {

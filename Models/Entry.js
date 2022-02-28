@@ -14,9 +14,6 @@ Entry.init(
 			autoIncrement: true,
 			unique: true
 		},
-        date: {
-            type: DataTypes.DATE,
-        },
         activityId: {
             type: DataTypes.INTEGER,
         },

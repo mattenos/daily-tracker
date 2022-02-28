@@ -2,6 +2,8 @@ const router = require('express').Router();
 const Character = require('../Models/Character')
 const Sequelize = require('../config/connection');
 const activitiesJson = require('../seeds/activities.json');
+const Entry = require('../Models/Entry')
+
 
 // Home route to localhost:3001
 router.get('/', (req, res) => {
@@ -27,15 +29,11 @@ router.post('/character', async (req, res) => {
     }
 });
 
-// 
+// AT THE MOMENT CREATING ENTRIES, BUT ALSO CREATING DUPLICATES
+// NEED TO BE QUERIED WHEN CHARACTER IS LOGGED IN TO POPULATE THE CHECKLIST OF ACTIVITIES IN CASE THEY LOG IN MORE THAN ONCE A DAY
+// Post the completed entries(activity IDs and character ID) to the db
 router.post('/entry', (req, res) => {
-    const characterId = req.body.characterId;
-    const completedActivityIds = req.body.completedActivityIds;
-    console.log(characterId);
-    console.log(completedActivityIds);
-    completedActivityIds.forEach((activityId) => {
-    }) 
-
+Entry.bulkCreate(req.body).then((results) => console.log(results))
 })
 
 // Forwarding the activities.json data
