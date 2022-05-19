@@ -2,21 +2,26 @@ const characterSubmitButton = document.getElementById('character-submit');
 const characterForm = document.getElementById('character-form');
 const entryForm = document.getElementById('entry-form');
 const entrySubmitButton = document.getElementById('entry-submit');
-
 let activeCharacter;
+
+// Will capitalize the first letter in the string. Being used for character name.
+// https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-// Getting the activites and sending to populateActivties
+// Getting the activites.json from routes, and sending to populateActivties function.
+
 fetch('api/activities', {
     method: "GET"
 })
     .then((res) => res.json())
     .then((data) => populateActivities(data));
 
+// This is a forEach loop that we are using to display the checklist once a character is found or created.
 // Thank you React.js
+
 const populateActivities = (activities) => {
     const entryWrap = document.getElementById('entry-wrapper');
     activities.forEach(activity => {
@@ -43,6 +48,7 @@ const populateActivities = (activities) => {
 // Submitting the completed activities for the day. Querying for the attribute 'data-activity-id' from the above html.
 // backend is looking for keys noted in entry.js model.
 // Then we are posting the character ID and the completed activities when submitted on the front end.
+
 const submitEntries = () => {
     const completedActivityIds = [];
     const entryInputs = Array.from(document.querySelectorAll('[data-activity-id]'));
@@ -55,17 +61,19 @@ const submitEntries = () => {
                 }
             )
         }
+        console.log(completedActivityIds)
     });
     fetch('/api/entry', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(completedActivityIds)
+        body: JSON.stringify(completedActivityIds),
     })
 };
 
-// fetch request that posts the user input into the db
+// fetch request that posts the user input into the db. set data as activeCharacter once posted at login.
+
 const submitCharacter = () => {
     let nameInput = document.getElementById("characterName");
     let realmInput = document.getElementById("realm");
@@ -102,16 +110,3 @@ const submitCharacter = () => {
 characterSubmitButton.onclick = submitCharacter;
 // Submits the completed entries on click of done-for-today button.
 entrySubmitButton.onclick = submitEntries;
-
-
-
-//
-const getData = () => {
-    fetch('/api', {
-        method: 'GET'
-    })
-        .then((res) => res.json())
-        .then((data) => console.log(data));
-};
-
-getData();

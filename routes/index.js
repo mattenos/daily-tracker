@@ -4,17 +4,11 @@ const Sequelize = require('../config/connection');
 const activitiesJson = require('../seeds/activities.json');
 const Entry = require('../Models/Entry')
 
-
-// Home route to localhost:3001
-router.get('/', (req, res) => {
-    res.json('This route works');
-});
-
 // Checks to see if name, realm, region exists. Creates the character if it doesnt exist.
 router.post('/character', async (req, res) => {
     const { name, realm, region } = (req.body)
     try {
-        // Sequelize documentation to use findOrCreate instead of if statement. https://sequelize.org/master/manual/model-querying-finders.html. Allows us to return data as array.
+        // Sequelize documentation to use findOrCreate instead of 'if' statement. https://sequelize.org/master/manual/model-querying-finders.html. Allows us to return data as array.
         const [characterData, isNewCharacter] = await Character.findOrCreate({
             where: {
                 name,
@@ -33,12 +27,12 @@ router.post('/character', async (req, res) => {
 // NEED TO BE QUERIED WHEN CHARACTER IS LOGGED IN TO POPULATE THE CHECKLIST OF ACTIVITIES IN CASE THEY LOG IN MORE THAN ONCE A DAY
 // Post the completed entries(activity IDs and character ID) to the db
 router.post('/entry', (req, res) => {
-Entry.bulkCreate(req.body).then((results) => console.log(results))
+    Entry.bulkCreate(req.body).then((results) => console.log(results))
 })
 
 // Forwarding the activities.json data
 router.get('/activities', (req, res) => {
-res.json(activitiesJson)
+    res.json(activitiesJson)
 })
 
 
